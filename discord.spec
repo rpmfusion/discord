@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        0.0.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -59,6 +59,9 @@ discord.desktop
 
 
 %changelog
+* Fri Mar 02 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 0.0.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Wed Jan 31 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.4-1
 - Update to 0.0.4
 
