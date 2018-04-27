@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        0.0.4
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -26,6 +26,7 @@ Requires:       libX11%{_isa} >= 1.6
 Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
+Requires:	libatomic%{_isa}
 
 %description
 Linux Release for Discord, a free proprietary VoIP application designed for
@@ -59,6 +60,12 @@ discord.desktop
 
 
 %changelog
+* Fri Apr 27 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.4-3
+- Added libatomic requirement.
+
+* Fri Mar 02 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 0.0.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Wed Jan 31 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.4-1
 - Update to 0.0.4
 
