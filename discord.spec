@@ -3,8 +3,8 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.4
-Release:        3%{?dist}
+Version:        0.0.5
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -60,6 +60,9 @@ discord.desktop
 
 
 %changelog
+* Thu May 03 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.5-1
+- Update to 0.0.5
+
 * Fri Apr 27 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.4-3
 - Added libatomic requirement.
 
