@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.5
+Version:        0.0.8
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -60,6 +60,15 @@ discord.desktop
 
 
 %changelog
+* Wed Jan 16 2019 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.8-1
+- Updated to 0.0.8
+
+* Sun Aug 19 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.0.5-3
+- Rebuilt for Fedora 29 Mass Rebuild binutils issue
+
+* Fri Jul 27 2018 RPM Fusion Release Engineering <sergio@serjux.com> - 0.0.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Thu May 03 2018 Sean Callaway <seancallaway@fedoraproject.org> 0.0.5-1
 - Update to 0.0.5
 
