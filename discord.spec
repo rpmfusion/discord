@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        0.0.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -57,9 +57,13 @@ discord.desktop
 %{_libdir}/discord/
 %{_bindir}/Discord
 %{_datadir}/applications/discord.desktop
+%attr(755, root, root) %{_libdir}/discord/Discord
 
 
 %changelog
+* Fri Jan 18 2019 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.8-2
+- Fix permissions issue on binary in source.
+
 * Wed Jan 16 2019 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.8-1
 - Updated to 0.0.8
 
