@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.8
+Version:        0.0.9
 Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -61,6 +61,9 @@ discord.desktop
 
 
 %changelog
+* Tue Mar 12 2019 Florian Ströger <florian@florianstroeger.com> - 0.0.9-1
+- Updated to 0.0.9
+
 * Fri Jan 18 2019 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.8-2
 - Fix permissions issue on binary in source.
 
