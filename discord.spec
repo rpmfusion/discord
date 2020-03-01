@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        0.0.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -26,8 +26,8 @@ Requires:       libX11%{_isa} >= 1.6
 Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
-Requires:	    libatomic%{_isa}
-Requires:       google-noto-emoji-color-fonts.noarch
+Requires:	libatomic%{_isa}
+Requires:       google-noto-emoji-color-fonts
 
 %description
 Linux Release for Discord, a free proprietary VoIP application designed for
@@ -62,6 +62,9 @@ discord.desktop
 
 
 %changelog
+* Sun Mar 01 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.10-2
+- Fixed dependency issue
+
 * Wed Feb 26 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.10-1
 - Update to 0.0.10
 - Add dependency for emoji fonts
