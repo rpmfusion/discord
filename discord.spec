@@ -3,8 +3,8 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.10
-Release:        2%{?dist}
+Version:        0.0.11
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -26,8 +26,9 @@ Requires:       libX11%{_isa} >= 1.6
 Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
-Requires:	libatomic%{_isa}
-Requires:       google-noto-emoji-color-fonts
+Requires:       libatomic%{_isa}
+
+Recommends:     google-noto-emoji-color-fonts
 
 %description
 Linux Release for Discord, a free proprietary VoIP application designed for
@@ -62,6 +63,12 @@ discord.desktop
 
 
 %changelog
+* Fri Aug 07 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.11-1
+- Updated to 0.0.11
+
+* Tue May 12 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.10-3
+- Made emoji fonts a weak dependency
+
 * Sun Mar 01 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.10-2
 - Fixed dependency issue
 
