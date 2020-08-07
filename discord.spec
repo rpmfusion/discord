@@ -3,8 +3,8 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.10
-Release:        2%{?dist}
+Version:        0.0.11
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -62,6 +62,9 @@ discord.desktop
 
 
 %changelog
+* Fri Aug 07 2020 Ivan Mironov <mironov.ivan@gmail.com> - 0.0.11-1
+- Update to 0.0.11
+
 * Sun Mar 01 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.10-2
 - Fixed dependency issue
 
