@@ -3,8 +3,8 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.11
-Release:        2%{?dist}
+Version:        0.0.12
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -63,6 +63,9 @@ discord.desktop
 
 
 %changelog
+* Fri Sep 11 2020 Kurnev Egor <kurnev.e@gmail.com> - 0.0.12-1
+- Updated to 0.0.12
+
 * Wed Aug 19 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.0.11-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
