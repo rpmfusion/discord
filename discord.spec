@@ -27,6 +27,7 @@ Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
 Requires:       libatomic%{_isa}
+Requires:       libappindicator-gtk3%{_isa}
 
 Recommends:     google-noto-emoji-color-fonts
 
