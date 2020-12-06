@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.12
+Version:        0.0.13
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -63,6 +63,9 @@ discord.desktop
 
 
 %changelog
+* Sun Dec 06 2020 Sérgio Basto <sergio@serjux.com> - 0.0.13-1
+- Update 0.0.13
+
 * Fri Sep 11 2020 Sean Callaway <seancallaway@fedoraproject.org> - 0.0.12-1
 * Updated to 0.0.12
 
