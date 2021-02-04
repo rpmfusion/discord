@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        0.0.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -63,6 +63,9 @@ discord.desktop
 
 
 %changelog
+* Thu Feb 04 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.0.13-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Sun Dec 06 2020 Sérgio Basto <sergio@serjux.com> - 0.0.13-1
 - Update 0.0.13
 
