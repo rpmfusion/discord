@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.14
+Version:        0.0.15
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -63,6 +63,9 @@ discord.desktop
 
 
 %changelog
+* Tue May 25 2021 Sérgio Basto <sergio@serjux.com> - 0.0.15-1
+- Update 0.0.15
+
 * Wed Mar 24 2021 Sérgio Basto <sergio@serjux.com> - 0.0.14-1
 - Update 0.0.14
 
