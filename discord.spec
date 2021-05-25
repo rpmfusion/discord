@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.14
+Version:        0.0.15
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
