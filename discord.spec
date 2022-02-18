@@ -3,7 +3,7 @@
 %global         __requires_exclude libffmpeg.so
 
 Name:           discord
-Version:        0.0.16
+Version:        0.0.17
 Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -63,6 +63,9 @@ discord.desktop
 
 
 %changelog
+* Thu Feb 17 2022 Eric Duvic <eric@ericduvic.com> - 0.0.17-1
+- Update 0.0.17
+
 * Thu Feb 10 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0.16-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
