@@ -48,14 +48,15 @@ mkdir -p %{buildroot}/%{_bindir}/
 mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
 
-cp -r * %{buildroot}/%{_libdir}/discord/
-ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
 desktop-file-install                            \
 --set-icon=%{_libdir}/discord/discord.png       \
 --set-key=Exec --set-value=%{_bindir}/Discord   \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
+
+cp -r * %{buildroot}/%{_libdir}/discord/
+ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
 
 %files
 %{_libdir}/discord/
