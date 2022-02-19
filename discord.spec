@@ -15,7 +15,6 @@ Source0:        https://dl.discordapp.net/apps/linux/%{version}/%{name}-%{versio
 ExclusiveArch:  x86_64
 
 BuildRequires:  desktop-file-utils%{_isa}
-BuildRequires:  sed%{_isa}
 
 Requires:       glibc%{_isa}
 Requires:       alsa-lib%{_isa}
