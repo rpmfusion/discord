@@ -1,10 +1,11 @@
 %global         debug_package %{nil}
 %global         __strip /bin/true
 %global         __requires_exclude libffmpeg.so
+%global         _build_id_links none
 
 Name:           discord
 Version:        0.0.17
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -28,7 +29,10 @@ Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
 Requires:       libatomic%{_isa}
 
+%if !0%{?el7}
+Recommends:     (libappindicator-gtk3%{_isa} if gtk3%{_isa})
 Recommends:     google-noto-emoji-color-fonts
+%endif
 
 %description
 Linux Release for Discord, a free proprietary VoIP application designed for
@@ -40,13 +44,12 @@ gaming communities.
 %build
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_bindir}/
 mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
 
 cp -r * %{buildroot}/%{_libdir}/discord/
-ln -sf %{_libdir}/discord/Discord %{buildroot}/%{_bindir}/
+ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
 desktop-file-install                            \
 --set-icon=%{_libdir}/discord/discord.png       \
 --set-key=Exec --set-value=%{_bindir}/Discord   \
@@ -55,14 +58,18 @@ desktop-file-install                            \
 discord.desktop
 
 %files
-%defattr(-,root,root)
 %{_libdir}/discord/
 %{_bindir}/Discord
 %{_datadir}/applications/discord.desktop
-%attr(755, root, root) %{_libdir}/discord/Discord
 
 
 %changelog
+* Sat Feb 19 2022 Sérgio Basto <sergio@serjux.com> - 0.0.17-3
+- (#6166) fixes conflicts with files with other packages
+- Minor fixes (warning: File listed twice: /usr/lib64/discord/Discord)
+- (#5921) Adding libappindicator-gtk3 as a dependency if gtk3 is installed
+- Fix "warning: absolute symlink"
+
 * Thu Feb 17 2022 Eric Duvic <eric@ericduvic.com> - 0.0.17-1
 - Update 0.0.17
 
