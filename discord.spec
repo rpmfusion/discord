@@ -27,6 +27,7 @@ Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
 Requires:       libatomic%{_isa}
+Requires:       hicolor-icon-theme
 
 %if !0%{?el7}
 Recommends:     (libappindicator-gtk3%{_isa} if gtk3%{_isa})
@@ -48,7 +49,7 @@ mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
 
 desktop-file-install                            \
---set-icon=%{_libdir}/discord/discord.png       \
+--set-icon=%{name}                              \
 --set-key=Exec --set-value=%{_bindir}/Discord   \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
@@ -56,11 +57,17 @@ discord.desktop
 
 cp -r * %{buildroot}/%{_libdir}/discord/
 ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
+install -p -D -m 644 %{name}.png \
+        %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+
+%check
+desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %files
 %{_libdir}/discord/
 %{_bindir}/Discord
 %{_datadir}/applications/discord.desktop
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 
 %changelog
