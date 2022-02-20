@@ -5,7 +5,7 @@
 
 Name:           discord
 Version:        0.0.17
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -71,6 +71,11 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sun Feb 20 2022 David Auer <dreua@posteo.de> - 0.0.17-4
+- (#6108) Install icon to icons/hicolor and don't hardcode path in desktop file
+- Remove unnecessary build requirement: sed
+- Fix original desktop file being shipped
+
 * Sat Feb 19 2022 Sérgio Basto <sergio@serjux.com> - 0.0.17-3
 - (#6166) fixes conflicts with files with other packages
 - Minor fixes (warning: File listed twice: /usr/lib64/discord/Discord)
