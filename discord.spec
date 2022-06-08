@@ -4,8 +4,8 @@
 %global         _build_id_links none
 
 Name:           discord
-Version:        0.0.17
-Release:        4%{?dist}
+Version:        0.0.18
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -71,6 +71,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Wed Jun 08 2022 Sérgio Basto <sergio@serjux.com> - 0.0.18-1
+- Update discord to 0.0.18
+
 * Sun Feb 20 2022 David Auer <dreua@posteo.de> - 0.0.17-4
 - (#6108) Install icon to icons/hicolor and don't hardcode path in desktop file
 - Remove unnecessary build requirement: sed
