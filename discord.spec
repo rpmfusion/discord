@@ -4,8 +4,8 @@
 %global         _build_id_links none
 
 Name:           discord
-Version:        0.0.18
-Release:        2%{?dist}
+Version:        0.0.19
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -71,6 +71,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Thu Aug 11 2022 Justin Zobel <justin@1707.io> - 0.0.19-1
+- Update to 0.0.19
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0.18-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
