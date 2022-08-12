@@ -32,6 +32,7 @@ Requires:       hicolor-icon-theme
 %if !0%{?el7}
 Recommends:     (libappindicator-gtk3%{_isa} if gtk3%{_isa})
 Recommends:     google-noto-emoji-color-fonts
+Recommends:     libXScrnSaver
 %endif
 
 %description
