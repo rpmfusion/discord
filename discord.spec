@@ -4,7 +4,7 @@
 %global         _build_id_links none
 
 Name:           discord
-Version:        0.0.19
+Version:        0.0.20
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -72,6 +72,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sat Sep 17 2022 Jesse Garcia <isa3laws@gmail.com> - 0.0.20-1
+- Update to 0.0.20
+
 * Thu Aug 11 2022 Justin Zobel <justin@1707.io> - 0.0.19-1
 - Update to 0.0.19
 
