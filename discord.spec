@@ -2,10 +2,12 @@
 %global         __strip /bin/true
 %global         __requires_exclude libffmpeg.so
 %global         _build_id_links none
+###############################Exclude Private bundled libs###########################
+%global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
 Version:        0.0.21
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -72,6 +74,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Fri Nov 18 2022 Leigh Scott <leigh123linux@gmail.com> - 0.0.21-2
+- Fix rfbz6498
+
 * Fri Oct 21 2022 Sérgio Basto <sergio@serjux.com> - 0.0.21-1
 - Update discord to 0.0.21
 
