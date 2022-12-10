@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.21
-Release:        2%{?dist}
+Version:        0.0.22
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Sat Dec 10 2022 Sérgio Basto <sergio@serjux.com> - 0.0.22-1
+- Update discord to 0.0.22
+
 * Fri Nov 18 2022 Leigh Scott <leigh123linux@gmail.com> - 0.0.21-2
 - Fix rfbz6498
 
