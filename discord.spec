@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.25
+Version:        0.0.26
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 
 %changelog
+* Fri Mar 31 2023 Alexey Ermolaev <dotterian@dotterian.ru> - 0.0.26-1
+- Update discord to 0.0.26
+
 * Wed Feb 15 2023 Sérgio Basto <sergio@serjux.com> - 0.0.25-1
 - Update discord to 0.0.25
 
