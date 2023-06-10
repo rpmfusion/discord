@@ -7,16 +7,19 @@
 
 Name:           discord
 Version:        0.0.27
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
 License:        Proprietary
 URL:            https://discordapp.com/
 Source0:        https://dl.discordapp.net/apps/linux/%{version}/%{name}-%{version}.tar.gz
+# Adapted from https://raw.githubusercontent.com/flathub/com.discordapp.Discord/master/com.discordapp.Discord.appdata.xml
+Source1:        discord.metainfo.xml
 ExclusiveArch:  x86_64
 
-BuildRequires:  desktop-file-utils%{_isa}
+BuildRequires:  desktop-file-utils
+BuildRequires:  libappstream-glib
 
 Requires:       glibc%{_isa}
 Requires:       alsa-lib%{_isa}
@@ -50,6 +53,7 @@ gaming communities.
 mkdir -p %{buildroot}/%{_bindir}/
 mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
+mkdir -p %{buildroot}%{_metainfodir}/
 
 desktop-file-install                            \
 --set-icon=%{name}                              \
@@ -63,17 +67,24 @@ ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
 install -p -D -m 644 %{name}.png \
         %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
+install -p -m 0644 %{SOURCE1} %{buildroot}%{_metainfodir}/
+
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metainfo.xml
 
 %files
 %{_libdir}/discord/
 %{_bindir}/Discord
 %{_datadir}/applications/discord.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_metainfodir}/%{name}.metainfo.xml
 
 
 %changelog
+* Sat Jun 10 2023 Leigh Scott <leigh123linux@gmail.com> - 0.0.27-2
+- Add appdata
+
 * Thu Apr 27 2023 Sérgio Basto <sergio@serjux.com> - 0.0.27-1
 - Update discord to 0.0.27
 
