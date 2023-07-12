@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.27
-Release:        2%{?dist}
+Version:        0.0.28
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -82,6 +82,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Wed Jul 12 2023 Sérgio Basto <sergio@serjux.com> - 0.0.28-1
+- Update discord to 0.0.28
+
 * Sat Jun 10 2023 Leigh Scott <leigh123linux@gmail.com> - 0.0.27-2
 - Add appdata
 
