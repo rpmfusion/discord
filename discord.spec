@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.30
+Version:        0.0.31
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat for gamers
 
@@ -82,6 +82,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Wed Oct 11 2023 Sérgio Basto <sergio@serjux.com> - 0.0.31-1
+- Update discord to 0.0.31
+
 * Fri Sep 22 2023 Sérgio Basto <sergio@serjux.com> - 0.0.30-1
 - Update discord to 0.0.30
 
