@@ -8,7 +8,7 @@
 Name:           discord
 Version:        0.0.34
 Release:        1%{?dist}
-Summary:        All-in-one voice and text chat for gamers
+Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
 License:        Proprietary
@@ -41,8 +41,7 @@ Recommends:     libXScrnSaver
 %endif
 
 %description
-Linux Release for Discord, a free proprietary VoIP application designed for
-gaming communities.
+Linux Release for Discord, a free proprietary VoIP application
 
 %prep
 %autosetup -n Discord
