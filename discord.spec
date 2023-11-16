@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.34
+Version:        0.0.35
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -81,6 +81,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Thu Nov 16 2023 Leigh Scott <leigh123linux@gmail.com> - 0.0.35-1
+- Update discord to 0.0.35
+
 * Tue Nov 07 2023 Sérgio Basto <sergio@serjux.com> - 0.0.34-1
 - Update discord to 0.0.34
 
