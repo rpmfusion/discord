@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.40
+Version:        0.0.42
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -81,6 +81,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Tue Jan 30 2024 Sérgio Basto <sergio@serjux.com> - 0.0.42-1
+- Update discord to 0.0.42
+
 * Wed Jan 10 2024 Sérgio Basto <sergio@serjux.com> - 0.0.40-1
 - Update discord to 0.0.40
 
