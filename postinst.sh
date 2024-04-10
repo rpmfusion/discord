@@ -31,7 +31,7 @@ for DIR in /home/* ; do
 done
 rm -f "$OS_TMPDIR/discord.sock"
 
-### START OF PATCH (SKIP UPDATE POP-UP) ###
+### START OF PATCH (SKIP CHECK UPDATE POP-UP) ###
 # Check if discord user configuration directory exist
 DISCORD_USER_CONFIG_DIR="/home/$(logname)/.config/discord"
 DISCORD_USER_SETTINGS_JSON_FILE="/home/$(logname)/.config/discord/settings.json"
@@ -47,12 +47,11 @@ if [ ! -f "$DISCORD_USER_SETTINGS_JSON_FILE" ]; then
 }' >"$DISCORD_USER_SETTINGS_JSON_FILE"
     chmod 644 "$DISCORD_USER_SETTINGS_JSON_FILE"
     chown $(logname):$(logname) "$DISCORD_USER_SETTINGS_JSON_FILE"
-# If 'settings.json' file exist and if "SKIP_HOST_UPDATE" doesn't set : set it to true
+# If 'settings.json' file exist and if "SKIP_HOST_UPDATE" doesn't set : keep user settings
+# and add "SKIP_HOST_UPDATE" line to the file
 elif ! grep "SKIP_HOST_UPDATE" "$DISCORD_USER_SETTINGS_JSON_FILE"; then
-    # Get 'settings.json' content without final closing brace, add "SKIP_HOST_UPDATE" 
-    # line with final closing brace, and save it to the file
     echo "$(grep -v '^}' $DISCORD_USER_SETTINGS_JSON_FILE),
 	\"SKIP_HOST_UPDATE\": true
 }" >"$DISCORD_USER_SETTINGS_JSON_FILE"
 fi
-### END OF PATCH (SKIP UPDATE POP-UP) ###
+### END OF PATCH (SKIP CHECK UPDATE POP-UP) ###
