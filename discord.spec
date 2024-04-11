@@ -83,10 +83,6 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 %{_libdir}/discord/postinst.sh
 
 %changelog
-* Thu Apr 11 2024 Valentin Tainon <valmerax@proton.me> - 0.0.49-1
-- (#6841) Fix check update pop-up (patch added to postinst.sh)
-- Added '%post' missing scriptlet to this file for run postinst.sh
-
 * Tue Apr 09 2024 Nicolas Chauvet <nchauvet@linagora.com> - 0.0.49-1
 - Update to 0.0.49
 
