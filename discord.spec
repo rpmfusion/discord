@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.48
+Version:        0.0.49
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -79,8 +79,17 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_metainfodir}/%{name}.metainfo.xml
 
+%post
+%{_libdir}/discord/postinst.sh
 
 %changelog
+* Thu Apr 11 2024 Valentin Tainon <valmerax@proton.me> - 0.0.49-1
+- (#6841) Fix check update pop-up (patch added to postinst.sh)
+- Added '%post' missing scriptlet to this file for run postinst.sh
+
+* Tue Apr 09 2024 Nicolas Chauvet <nchauvet@linagora.com> - 0.0.49-1
+- Update to 0.0.49
+
 * Mon Apr 08 2024 Sérgio Basto <sergio@serjux.com> - 0.0.48-1
 - Update discord to 0.0.48
 
