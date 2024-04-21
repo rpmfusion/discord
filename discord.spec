@@ -16,6 +16,8 @@ URL:            https://discordapp.com/
 Source0:        https://dl.discordapp.net/apps/linux/%{version}/%{name}-%{version}.tar.gz
 # Adapted from https://raw.githubusercontent.com/flathub/com.discordapp.Discord/master/com.discordapp.Discord.appdata.xml
 Source1:        discord.metainfo.xml
+Source2:        wrapper.sh
+Source3:        disable-breaking-updates.py
 ExclusiveArch:  x86_64
 
 BuildRequires:  desktop-file-utils
@@ -32,6 +34,7 @@ Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
 Requires:       libatomic%{_isa}
+Requires:       python3%{_isa}
 Requires:       hicolor-icon-theme
 
 %if !0%{?el7}
@@ -56,7 +59,7 @@ mkdir -p %{buildroot}%{_metainfodir}/
 
 desktop-file-install                            \
 --set-icon=%{name}                              \
---set-key=Exec --set-value=%{_bindir}/Discord   \
+--set-key=Exec --set-value='%{_bindir}/bash %{_libdir}/discord/wrapper.sh' \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
@@ -67,6 +70,8 @@ install -p -D -m 644 %{name}.png \
         %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 install -p -m 0644 %{SOURCE1} %{buildroot}%{_metainfodir}/
+install -p -m 755 %{SOURCE2} %{buildroot}%{_libdir}/discord/
+install -p -m 755 %{SOURCE3} %{buildroot}%{_libdir}/discord/
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
