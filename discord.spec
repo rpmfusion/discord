@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.51
+Version:        0.0.52
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -81,6 +81,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Thu May 02 2024 Leigh Scott <leigh123linux@gmail.com> - 0.0.52-1
+- Update to 0.0.51 release
+
 * Fri Apr 26 2024 Leigh Scott <leigh123linux@gmail.com> - 0.0.51-1
 - Update to 0.0.51 release
 
