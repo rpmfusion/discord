@@ -34,7 +34,6 @@ Requires:       libXtst%{_isa} >= 1.2
 Requires:       libappindicator%{_isa}
 Requires:       libcxx%{_isa}
 Requires:       libatomic%{_isa}
-Requires:       python3%{_isa}
 Requires:       hicolor-icon-theme
 
 %if !0%{?el7}

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Disable breaking updates which will prompt users to download a deb or tar file
 and lock them out of Discord making the program unusable.
