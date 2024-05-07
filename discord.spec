@@ -7,7 +7,7 @@
 
 Name:           discord
 Version:        0.0.52
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -85,6 +85,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Tue May 07 2024 Nicolas Chauvet <kwizart@gmail.com> - 0.0.52-2
+- Disable discord check-update pop-up - Valentin Tainon
+  https://github.com/rpmfusion/discord/pull/20
+
 * Thu May 02 2024 Leigh Scott <leigh123linux@gmail.com> - 0.0.52-1
 - Update to 0.0.51 release
 
