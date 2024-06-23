@@ -58,13 +58,13 @@ mkdir -p %{buildroot}%{_metainfodir}/
 
 desktop-file-install                            \
 --set-icon=%{name}                              \
---set-key=Exec --set-value='%{_libdir}/discord/wrapper.sh' \
+--set-key=Exec --set-value=%{_bindir}/Discord   \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
 
 cp -r * %{buildroot}/%{_libdir}/discord/
-ln -sf ../%{_lib}/discord/Discord %{buildroot}/%{_bindir}/
+ln -sf ../%{_lib}/discord/wrapper.sh %{buildroot}/%{_bindir}/Discord
 install -p -D -m 644 %{name}.png \
         %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
