@@ -7,7 +7,7 @@
 
 Name:           discord
 Version:        0.0.58
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -23,21 +23,22 @@ ExclusiveArch:  x86_64
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
 
+# From official discord-0.0.58.deb
+# Depends: libc6, libasound2, libatomic1, libnotify4, libnspr4, libnss3, libstdc++6, libxss1, libxtst6
+# Recommends: libappindicator1 | libayatana-appindicator1
+
 Requires:       glibc%{_isa}
 Requires:       alsa-lib%{_isa}
-Requires:       GConf2%{_isa}
+Requires:       libatomic%{_isa}
 Requires:       libnotify%{_isa}
 Requires:       nspr%{_isa} >= 4.13
 Requires:       nss%{_isa} >= 3.27
-Requires:       libX11%{_isa} >= 1.6
+Requires:       libstdc++%{_isa}
 Requires:       libXtst%{_isa} >= 1.2
-Requires:       libappindicator%{_isa}
-Requires:       libcxx%{_isa}
-Requires:       libatomic%{_isa}
 Requires:       hicolor-icon-theme
 
 %if !0%{?el7}
-Recommends:     (libappindicator-gtk3%{_isa} if gtk3%{_isa})
+Recommends:     (libayatana-appindicator-gtk3%{_isa} if gtk3%{_isa})
 Recommends:     google-noto-emoji-color-fonts
 Recommends:     libXScrnSaver
 %endif
@@ -85,6 +86,11 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Wed Jun 26 2024 Sérgio Basto <sergio@serjux.com> - 0.0.58-2
+- Move to libayatana-appindicator
+- Remove the requires of libcxx http://libcxx.llvm.org/ and requires libstdc++ http://gcc.gnu.org
+- Also remove the requires of GConf2 and libX11
+
 * Wed Jun 26 2024 Sérgio Basto <sergio@serjux.com> - 0.0.58-1
 - Update to 0.0.58
 
