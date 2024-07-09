@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.58
-Release:        2%{?dist}
+Version:        0.0.59
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -86,6 +86,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Tue Jul 09 2024 Sérgio Basto <sergio@serjux.com> - 0.0.59-1
+- Update to 0.0.59
+
 * Wed Jun 26 2024 Sérgio Basto <sergio@serjux.com> - 0.0.58-2
 - Move to libayatana-appindicator
 - Remove the requires of libcxx http://libcxx.llvm.org/ and requires libstdc++ http://gcc.gnu.org
