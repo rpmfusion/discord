@@ -40,11 +40,12 @@ if spec != spec3:
         print('error running runme')
 
     print("New version available!")
+    print('spectool -g discord.spec')
     print('rfpkg mockbuild -N --default-mock-resultdir --root fedora-39-x86_64-rpmfusion_nonfree')
 else:
     print("Already updated !")
+    print('spectool -g discord.spec')
 
-print('spectool -g discord.spec')
 print("rfpkg new-sources $(spectool -l --sources discord.spec | grep https | sed 's/.*: //;s#.*/##')")
 print('rfpkg ci -c && git show && echo Press enter to push and build; read dummy; rfpkg push && rfpkg build --nowait')
 print('git checkout f40 && git merge master && git push && rfpkg build --nowait; git checkout master')
