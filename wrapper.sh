@@ -7,4 +7,4 @@ DISCORD_BIN=$(dirname $(readlink -f $0))/Discord
 /usr/lib64/discord/disable-breaking-updates.py
 
 # Launch discord
-exec "$DISCORD_BIN"
+exec "$DISCORD_BIN" "$@"
