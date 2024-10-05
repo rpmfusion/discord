@@ -7,7 +7,7 @@
 
 Name:           discord
 Version:        0.0.70
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -60,6 +60,7 @@ mkdir -p %{buildroot}%{_metainfodir}/
 desktop-file-install                            \
 --set-icon=%{name}                              \
 --set-key=Exec --set-value=%{_bindir}/Discord   \
+--remove-key=Path                               \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
@@ -86,6 +87,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Sat Oct 05 2024 LuK1337 <priv.luk@gmail.com> - 0.0.70-2
+- Remove "Path" from the desktop file
+
 * Wed Oct 02 2024 Sérgio Basto <sergio@serjux.com> - 0.0.70-1
 - Update to 0.0.70
 
