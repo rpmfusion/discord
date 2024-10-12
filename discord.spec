@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.70
-Release:        2%{?dist}
+Version:        0.0.71
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -87,6 +87,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Sat Oct 12 2024 Sérgio Basto <sergio@serjux.com> - 0.0.71-1
+- Update to 0.0.71
+
 * Sat Oct 05 2024 LuK1337 <priv.luk@gmail.com> - 0.0.70-2
 - Remove "Path" from the desktop file
 
