@@ -50,5 +50,4 @@ print("rfpkg new-sources $(spectool -l --sources discord.spec | grep https | sed
 print('rfpkg ci -c && git show && echo Press enter to push and build; read dummy; rfpkg push && rfpkg build --nowait')
 print('git checkout f41 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout f40 && git merge master && git push && rfpkg build --nowait; git checkout master')
-print('git checkout f39 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout el9 && git merge master && git push && rfpkg build --nowait; git checkout master')
