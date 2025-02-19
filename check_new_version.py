@@ -41,7 +41,7 @@ if spec != spec3:
 
     print("New version available!")
     print('spectool -g discord.spec')
-    print('rfpkg mockbuild -N --default-mock-resultdir --root fedora-39-x86_64-rpmfusion_nonfree')
+    print('rfpkg mockbuild -N --default-mock-resultdir --root fedora-41-x86_64-rpmfusion_nonfree')
 else:
     print("Already updated !")
     print('spectool -g discord.spec')
