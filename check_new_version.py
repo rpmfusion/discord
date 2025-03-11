@@ -25,25 +25,24 @@ spec_file = "discord.spec"
 h = requests.head("https://discord.com/api/download/stable?platform=linux&format=tar.gz")
 print(h.headers.get("location"))
 minor64 = h.headers.get("location")
-version64 = minor64.split("/")[5]
+latest_version = minor64.split("/")[5]
 
 spec = open(spec_file).read()
-str_mx3 = re.compile(r'(Version:\s*) .*')
-spec3 = re.sub(str_mx3, r'\1 %s' % version64, spec)
+match = re.search(r'^Version:\s*(\S+)', spec, re.MULTILINE)
+current_version = match.group(1)
 
-if spec != spec3:
-#    open(spec_file, 'w').write(spec3)
+if current_version != latest_version:
     enviro = os.environ
-    pkgcmd = ['rpmdev-bumpspec', '-n', version64, '-c', 'Update to %s' % (version64),
+    pkgcmd = ['rpmdev-bumpspec', '-n', latest_version, '-c', 'Update to %s' % (latest_version),
         spec_file]
     if runme(pkgcmd, enviro):
         print('error running runme')
 
-    print("New version available!")
+    print(f"New version available: {current_version} -> {latest_version}")
     print('spectool -g discord.spec')
     print('rfpkg mockbuild -N --default-mock-resultdir --root fedora-41-x86_64-rpmfusion_nonfree')
 else:
-    print("Already updated !")
+    print(f"Already updated: {current_version}")
     print('spectool -g discord.spec')
 
 print("rfpkg new-sources $(spectool -l --sources discord.spec | grep https | sed 's/.*: //;s#.*/##')")
