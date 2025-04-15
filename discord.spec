@@ -6,8 +6,9 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.90
+Version:        0.0.89
 Release:        1%{?dist}
+Epoch:          1
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -87,6 +88,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Tue Apr 15 2025 LuK1337 <priv.luk@gmail.com> - 1:0.0.89-1
+- Downgrade to 0.0.89 (see https://discordstatus.com/incidents/mv9k3px764kd)
+
 * Tue Apr 01 2025 Sérgio Basto <sergio@serjux.com> - 0.0.90-1
 - Update to 0.0.90
 
