@@ -57,6 +57,8 @@ mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
 mkdir -p %{buildroot}%{_metainfodir}/
 
+cp -p discord.desktop discord_url.desktop
+
 desktop-file-install                            \
 --set-icon=%{name}                              \
 --set-key=Exec --set-value=%{_bindir}/Discord   \
@@ -64,6 +66,18 @@ desktop-file-install                            \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
+
+desktop-file-install                            \
+--set-icon=%{name}                              \
+--set-key=Exec --set-value="%{_bindir}/Discord --url -- %%u" \
+--add-mime-type=x-scheme-handler/discord        \
+--set-key=NoDisplay --set-value=true            \
+--set-key=X-KDE-AliasFor --set-value=discord.desktop \
+--remove-key=Path                               \
+--remove-key=StartupWMClass                     \
+--delete-original                               \
+--dir=%{buildroot}/%{_datadir}/applications     \
+discord_url.desktop
 
 cp -r * %{buildroot}/%{_libdir}/discord/
 ln -sf ../%{_lib}/discord/wrapper.sh %{buildroot}/%{_bindir}/Discord
@@ -82,6 +96,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 %{_libdir}/discord/
 %{_bindir}/Discord
 %{_datadir}/applications/discord.desktop
+%{_datadir}/applications/discord_url.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_metainfodir}/%{name}.metainfo.xml
 
@@ -432,4 +447,3 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 * Thu Jan 12 2017 Sean Callaway <seancallaway@fedoraproject.org> 0.0.1-1
 - Initial build using version 0.0.1
-
