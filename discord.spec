@@ -6,7 +6,7 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.98
+Version:        0.0.100
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -87,6 +87,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Wed Jul 02 2025 Sérgio Basto <sergio@serjux.com> - 0.0.100-1
+- Update to 0.0.100
+
 * Tue Jun 17 2025 Sérgio Basto <sergio@serjux.com> - 0.0.98-1
 - Update to 0.0.98
 
