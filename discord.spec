@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.100
-Release:        2%{?dist}
+Version:        0.0.103
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -87,6 +87,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Tue Jul 29 2025 Sérgio Basto <sergio@serjux.com> - 0.0.103-1
+- Update to 0.0.103
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0.100-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
