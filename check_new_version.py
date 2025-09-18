@@ -27,6 +27,11 @@ print(h.headers.get("location"))
 minor64 = h.headers.get("location")
 latest_version = minor64.split("/")[5]
 
+h = requests.head("https://discord.com/api/download/stable?platform=linux&format=tar.gz", allow_redirects=True)
+last_modified = h.headers.get("Last-Modified")
+if last_modified:
+    print("Last Modified:", last_modified)
+
 spec = open(spec_file).read()
 match = re.search(r'^Version:\s*(\S+)', spec, re.MULTILINE)
 current_version = match.group(1)
