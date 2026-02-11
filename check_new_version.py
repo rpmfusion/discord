@@ -45,15 +45,15 @@ if current_version != latest_version:
 
     print(f"New version available: {current_version} -> {latest_version}")
     print('spectool -g discord.spec')
-    print('rfpkg --release f41 mockbuild -N --default-mock-resultdir')
+    print('rfpkg --release f43 mockbuild -N --default-mock-resultdir')
 else:
     print(f"Already updated: {current_version}")
     print('spectool -g discord.spec')
 
 print("rfpkg new-sources $(spectool -l --sources discord.spec | grep https | sed 's/.*: //;s#.*/##')")
 print('rfpkg ci -c && git show && echo Press enter to push and build; read dummy; rfpkg push && rfpkg build --nowait')
+print('git checkout f44 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout f43 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout f42 && git merge master && git push && rfpkg build --nowait; git checkout master')
-print('git checkout f41 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout el10 && git merge master && git push && rfpkg build --nowait; git checkout master')
 print('git checkout el9 && git merge master && git push && rfpkg build --nowait; git checkout master')
