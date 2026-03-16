@@ -6,8 +6,8 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.124
-Release:        2%{?dist}
+Version:        0.0.128
+Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -87,6 +87,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Mon Mar 16 2026 Sérgio Basto <sergio@serjux.com> - 0.0.128-1
+- Update to 0.0.128
+
 * Mon Feb 16 2026 Nicolas Chauvet <kwizart@gmail.com> - 0.0.124-2
 - Rebuilt
 
