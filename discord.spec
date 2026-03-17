@@ -60,7 +60,7 @@ mkdir -p %{buildroot}%{_metainfodir}/
 
 desktop-file-install                            \
 --set-icon=%{name}                              \
---set-key=Exec --set-value=%{_bindir}/Discord   \
+--set-key=Exec --set-value="%{_bindir}/Discord  --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-wayland-ime  --enable-features=GlobalShortcutsPortal" \
 --remove-key=Path                               \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
@@ -88,6 +88,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Wed Mar 18 2026 Yoong Jin <solomoncyj@gmail.com> - 0.0.128-1
+- Enable Auto Ozone Platform in spec and pass wayland feature switches
+
 * Mon Mar 16 2026 Sérgio Basto <sergio@serjux.com> - 0.0.128-1
 - Update to 0.0.128
 
