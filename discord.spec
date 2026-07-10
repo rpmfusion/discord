@@ -6,18 +6,16 @@
 %global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        0.0.135
+Version:        1.0.146
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
 License:        Proprietary
 URL:            https://discordapp.com/
-Source0:        https://dl.discordapp.net/apps/linux/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://stable.dl2.discordapp.net/apps/linux/%{version}/%{name}-%{version}.tar.gz
 # Adapted from https://raw.githubusercontent.com/flathub/com.discordapp.Discord/master/com.discordapp.Discord.appdata.xml
 Source1:        discord.metainfo.xml
-Source2:        wrapper.sh
-Source3:        disable-breaking-updates.py
 ExclusiveArch:  x86_64
 
 BuildRequires:  desktop-file-utils
@@ -54,40 +52,42 @@ Linux Release for Discord, a free proprietary VoIP application
 
 %install
 mkdir -p %{buildroot}/%{_bindir}/
-mkdir -p %{buildroot}/%{_libdir}/discord
 mkdir -p %{buildroot}/%{_datadir}/applications
+mkdir -p %{buildroot}/opt/discord
 mkdir -p %{buildroot}%{_metainfodir}/
 
 desktop-file-install                            \
 --set-icon=%{name}                              \
---set-key=Exec --set-value=%{_bindir}/Discord   \
 --remove-key=Path                               \
 --delete-original                               \
 --dir=%{buildroot}/%{_datadir}/applications     \
 discord.desktop
 
-cp -r * %{buildroot}/%{_libdir}/discord/
-ln -sf ../%{_lib}/discord/wrapper.sh %{buildroot}/%{_bindir}/Discord
+install -pm 0755 discord  %{buildroot}%{_bindir}
+install -pm 0755 updater_bootstrap %{buildroot}/opt/discord
+
 install -p -D -m 644 %{name}.png \
         %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 install -p -m 0644 %{SOURCE1} %{buildroot}%{_metainfodir}/
-install -p -m 755 %{SOURCE2} %{buildroot}%{_libdir}/discord/
-install -p -m 755 %{SOURCE3} %{buildroot}%{_libdir}/discord/
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metainfo.xml
 
 %files
-%{_libdir}/discord/
-%{_bindir}/Discord
+%{_bindir}/discord
 %{_datadir}/applications/discord.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_metainfodir}/%{name}.metainfo.xml
+%dir /opt/discord
+/opt/discord/updater_bootstrap
 
 
 %changelog
+* Fri Jul 10 2026 Nicolas Chauvet <kwizart@gmail.com> - 1.0.146-1
+- Update to 1.0.146
+
 * Tue Apr 28 2026 Sérgio Basto <sergio@serjux.com> - 0.0.135-1
 - Update to 0.0.135
 
