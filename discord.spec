@@ -1,12 +1,9 @@
 %global         debug_package %{nil}
 %global         __strip /bin/true
-%global         __requires_exclude libffmpeg.so
 %global         _build_id_links none
-###############################Exclude Private bundled libs###########################
-%global __provides_exclude_from %{_libdir}/discord/.*\\.s
 
 Name:           discord
-Version:        1.0.146
+Version:        1.0.148
 Release:        1%{?dist}
 Summary:        All-in-one voice and text chat
 
@@ -85,6 +82,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Thu Jul 16 2026 Nicolas Chauvet <kwizart@gmail.com> - 1.0.148-1
+- Update to 1.0.148
+
 * Fri Jul 10 2026 Nicolas Chauvet <kwizart@gmail.com> - 1.0.146-1
 - Update to 1.0.146
 
