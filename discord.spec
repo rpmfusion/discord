@@ -4,7 +4,7 @@
 
 Name:           discord
 Version:        1.0.148
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        All-in-one voice and text chat
 
 # License Information: https://bugzilla.rpmfusion.org/show_bug.cgi?id=4441#c14
@@ -82,6 +82,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Sun Aug 02 2026 RPM Fusion Release Engineering <leigh123linux@rpmfusion.org> - 1.0.148-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_45_Mass_Rebuild
+
 * Thu Jul 16 2026 Nicolas Chauvet <kwizart@gmail.com> - 1.0.148-1
 - Update to 1.0.148
 
